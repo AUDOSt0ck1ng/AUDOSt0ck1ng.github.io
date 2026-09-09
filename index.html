@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hsu Heng-Cheng — AI and backend engineer building agent orchestration, retrieval pipelines and the backend that keeps them running in production.">
+  <meta name="theme-color" content="#071016">
+  <!-- The reveal animation hides content until an observer unhides it. Gate it on JS
+       being alive, so a failed/blocked script.js leaves a readable page, not a blank one. -->
+  <script>document.documentElement.classList.add('js')</script>
+  <title>Hsu Heng-Cheng — AI / Backend Engineer</title>
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&family=Chakra+Petch:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="art-direction.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header">
+    <a class="monogram" href="#top" aria-label="Back to top">HC</a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">About</a>
+    </nav>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span class="sr-only">Menu</span></button>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">About</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><b>Hsu Heng-Cheng</b><span class="zh" lang="zh-Hant">許恒誠</span> / AI · BACKEND ENGINEER</p>
+        <h1>I build the systems<br>that <em>hold it together</em>.</h1>
+        <p class="lead">Agent orchestration, retrieval pipelines, and the backend that keeps an LLM demo standing up in production.</p>
+        <div class="actions">
+          <a class="button button-light" href="#work">View my work <span aria-hidden="true">→</span></a>
+          <a class="button" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="terminal" aria-label="Current direction"><span aria-hidden="true">&gt;</span> cat /info/AudoSt0ck1ng <b></b></p>
+      </div>
+
+      <div class="wonderland" aria-hidden="true">
+        <picture><source type="image/webp" srcset="assets/art/alice-and-rabbit.webp"><img class="hero-artwork" src="assets/art/alice-and-rabbit.png" alt="" width="1672" height="897" fetchpriority="high"></picture>
+      </div>
+    </section>
+
+    <section class="section featured" id="work">
+      <div class="section-index reveal">01</div>
+      <div class="project-copy reveal">
+        <h2>Stentor</h2>
+        <p class="subtitle">A local agent workspace for Claude Code and Codex — supervised delegation, with a voice.</p>
+        <p>One desktop process keeps many durable conversations. The journal lives in SQLite, so closing a window, restarting a provider or switching models never throws the thread away — and a background worker reports back into the conversation that dispatched it.</p>
+        <p>Project work runs through a supervised pipeline: read-only repository research, a requirements interview, implementation inside an isolated git worktree, then an independent read-only review. <b>FIXABLE</b> findings go back to the original implementer for another round; anything short of an explicit <b>PASS</b> fails closed and stops for you.</p>
+        <p class="terminal"><span aria-hidden="true">&gt;</span> research → requirements → worktree → review → pass / fix / ask</p>
+        <p>And it talks. A herald narrates the pipeline through a speaking avatar and speaks up when a run actually needs a decision — so the waiting in a vibe-coding session stops being time you sit and watch.</p>
+        <ul class="tags" aria-label="Technologies"><li>Agent Orchestration</li><li>Claude Code</li><li>Codex</li><li>MCP</li><li>Git Worktree</li><li>Review Loop</li><li>Persistent Memory</li><li>SQLite</li><li>TTS</li><li>STT</li><li>Python</li></ul>
+        <p class="band-label">Private repository</p>
+      </div>
+      <figure class="project-shot reveal">
+        <div class="window-bar"><span></span><span></span><span></span><b>STENTOR / LIVE WORKSPACE</b></div>
+        <div class="deck" data-deck="stentor">
+          <div class="deck-card"><img src="assets/projects/stentor01.png" alt="Stentor agent orchestration dashboard" width="1028" height="1295" loading="lazy" decoding="async"></div>
+          <div class="deck-card"><img src="assets/projects/stentor02.png" alt="Stentor worker loop detail" width="1020" height="1283" loading="lazy" decoding="async"></div>
+          <div class="deck-card"><img src="assets/projects/stentor03.png" alt="Stentor workspace settings" width="1009" height="1678" loading="lazy" decoding="async"></div>
+        </div>
+      </figure>
+    </section>
+
+    <section class="section other-projects" aria-labelledby="other-title">
+      <div class="section-heading reveal"><p class="eyebrow" id="other-title">OTHER PROJECTS</p></div>
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="card-heading"><span>02</span><div><h3>Persona <span class="role">Contributor</span></h3><p>Cross-platform AI avatar application</p></div></div>
+          <div class="card-media">
+            <div class="deck" data-deck="persona">
+              <div class="deck-card"><img src="assets/projects/persona01.jpg" alt="Persona voice chat interface" width="1588" height="1023" loading="lazy" decoding="async"></div>
+              <div class="deck-card"><img src="assets/projects/persona02.png" alt="Persona settings" width="1151" height="768" loading="lazy" decoding="async"></div>
+            </div>
+            <ul class="vertical-tags"><li>VRM</li><li>Electron</li><li>TypeScript</li><li>OAuth</li><li>MCP</li></ul>
+          </div>
+          <div class="card-footnote">
+            <p class="band-label">My contributions</p>
+            <ul class="contrib-list">
+              <li>VRoid Hub OAuth integration</li>
+              <li>MCP performance improvements</li>
+              <li>User–avatar interaction features</li>
+            </ul>
+            <p class="card-links"><a href="https://github.com/xikhar/persona" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a></p>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <div class="card-heading"><span>03</span><div><h3>AVATAR <span class="role">Co-author</span></h3><p>Desktop VRM companion with an agent bus</p></div></div>
+          <div class="card-media">
+            <div class="deck" data-deck="avatar">
+              <div class="deck-card"><img src="assets/projects/avatar01.png" alt="AVATAR character view with the model pose controls" width="555" height="784" loading="lazy" decoding="async"></div>
+              <div class="deck-card"><img src="assets/projects/avatar02.png" alt="AVATAR desktop companion beside its VRoid Hub setup panel" width="1429" height="795" loading="lazy" decoding="async"></div>
+            </div>
+            <ul class="vertical-tags"><li>VRM</li><li>VRoid Hub</li><li>OAuth</li><li>MCP</li><li>Motion Bus</li><li>Caching</li></ul>
+          </div>
+          <div class="card-footnote">
+            <p class="band-label">My contributions</p>
+            <ul class="contrib-list">
+              <li>VRoid Hub OAuth integration (v1)</li>
+              <li>MCP service and motion bus integration</li>
+              <li>Caching and performance improvements</li>
+            </ul>
+            <p class="card-links"><a href="https://github.com/ARPAHLS/avatar" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a><a href="https://doi.org/10.5281/zenodo.21791157" target="_blank" rel="noopener noreferrer">DOI <span aria-hidden="true">↗</span></a></p>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <div class="card-heading"><span>04</span><div><h3>KyoKyoBot <span class="role role-own">Author</span></h3><p>Chat bot with user-defined characters — RAG over its own lore and chat history</p></div></div>
+          <div class="card-media">
+            <div class="deck" data-deck="kyokyobot">
+              <div class="deck-card"><img src="assets/projects/kyokyobot01.png" alt="KyoKyoBot project highlights" width="1052" height="577" loading="lazy" decoding="async"></div>
+              <div class="deck-card"><img src="assets/projects/kyokyobot02.png" alt="KyoKyoBot project highlights" width="1043" height="580" loading="lazy" decoding="async"></div>
+            </div>
+            <ul class="vertical-tags"><li>Discord</li><li>RAG</li><li>LlamaIndex</li><li>Qdrant</li><li>FastEmbed</li><li>Memory</li><li>Discord</li><li>LLM</li></ul>
+          </div>
+          <div class="card-footnote">
+            <p class="band-label">What it does</p>
+            <ul class="contrib-list feature-list">
+              <li>Any character you define — isekai, novel cast, or a plain assistant</li>
+              <li>Per-channel chat history, on local files or a database</li>
+              <li>Long-term memory shared across channels, grounded by RAG</li>
+              <li>Many people in one channel, talking to one character</li>
+            </ul>
+            <p class="band-label">Private repository</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="two-column">
+      <section class="section compact" id="contributions">
+        <div class="list-title reveal"><h2><span aria-hidden="true">◉</span> Other contributions</h2><small>// open source</small></div>
+        <a class="list-row reveal" href="https://github.com/run-llama/llama_index" target="_blank" rel="noopener noreferrer"><i></i><span><b>LlamaIndex</b><small>Bug fixes and improvements</small><small class="aside">It used to be great — until they stopped fixing CI.</small></span><strong>View on GitHub <span aria-hidden="true">↗</span></strong></a>
+        <a class="list-row reveal" href="https://github.com/Kirakun0328/text-to-vrma" target="_blank" rel="noopener noreferrer"><i></i><span><b>text-to-vrma</b><small>Claude API support</small></span><strong>View on GitHub <span aria-hidden="true">↗</span></strong></a>
+        <a class="list-row reveal" href="https://ccumvllab.github.io/new-site/download.html" target="_blank" rel="noopener noreferrer"><i></i><span><b>CCUMVL-Vehicle-ReID Dataset</b><small>Vehicle re-identification dataset, built and released during my master's</small></span><strong>View dataset <span aria-hidden="true">↗</span></strong></a>
+      </section>
+      <section class="section compact" id="experience">
+        <div class="list-title reveal"><h2><span aria-hidden="true">▣</span> Experience</h2><small>// career</small></div>
+        <div class="timeline reveal">
+          <time datetime="2024-11/2026-07">2024.11<br>– 2026.07</time><i></i>
+          <div>
+            <b>MaiAgent Co., Ltd.</b><small>Senior Backend Engineer</small>
+            <ul class="role-points">
+              <li>Built core agentic conversation and workflow features for a production AI assistant platform; asynchronous execution cut processing time by over 60% in key use cases.</li>
+              <li>Redesigned the backend architecture — decoupled assistants from knowledge bases, added multi-source retrieval with QueryFusionRetriever.</li>
+              <li>Built and maintained a Text-to-SQL pipeline for natural-language database queries.</li>
+              <li>Integrated third-party communication platforms and implemented MCP OAuth authentication.</li>
+              <li>Automated engineering workflow with GitHub Issues, Sentry and Slack bots for monitoring and alerting, taking the conversation service error rate from peaks of 5% to consistently under 0.5%.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline study reveal">
+          <time datetime="2022-09/2024-08">2022.09<br>– 2024.08</time><i></i>
+          <div>
+            <b>National Chung Cheng University</b><small>M.S. in Computer Science and Information Engineering</small>
+          </div>
+        </div>
+        <div class="timeline reveal">
+          <time datetime="2018-03/2021-02">2018.03<br>– 2021.02</time><i></i>
+          <div>
+            <b>Ares International Corporation</b><small>Senior System Designer</small>
+            <ul class="role-points">
+              <li>Developed and maintained core backend and batch systems.</li>
+              <li>Maintained QA and CI environments and automated software packaging, cutting packaging time by over 80%.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline study reveal">
+          <time datetime="2013-09/2017-06">2013.09<br>– 2017.06</time><i></i>
+          <div>
+            <b>National Chung Cheng University</b><small>B.S. in Computer Science and Information Engineering</small>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="contact tea-party" id="contact" aria-labelledby="tea-title">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">05 / ALWAYS TIME FOR TEA</p>
+        <h2 id="tea-title">Take a seat.</h2>
+        <p>Contact me.</p>
+        <div class="socials">
+          <a href="https://github.com/AUDOSt0ck1ng" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/audost0ck1ng/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.58 5.98H.9V16h2.68V5.98ZM2.24 1A1.63 1.63 0 0 0 .6 2.62c0 .9.7 1.63 1.6 1.63h.02a1.63 1.63 0 0 0 0-3.25ZM15.4 10.25c0-2.9-1.55-4.46-3.62-4.46-1.67 0-2.42.92-2.84 1.57V5.98H6.26c.04.76 0 10.02 0 10.02h2.68v-5.6c0-.24.02-.48.09-.65.19-.48.63-.98 1.37-.98.97 0 1.35.74 1.35 1.81V16h2.68v-5.75Z"/></svg>
+          </a>
+          <a href="mailto:sachiel6484@gmail.com" aria-label="Email" title="Email">
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" d="M1.4 3.6h13.2v8.8H1.4z"/><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="m1.7 4.1 6.3 4.6 6.3-4.6"/></svg>
+          </a>
+        </div>
+        <span class="tea-time">03:00 &nbsp; / &nbsp; Time stays. Ideas wander.</span>
+      </div>
+      <div class="tea-art" aria-hidden="true"><picture><source type="image/webp" srcset="assets/art/three-oclock-tea-party.webp"><img src="assets/art/three-oclock-tea-party.png" alt="" width="2171" height="688" loading="lazy" decoding="async"></picture></div>
+    </section>
+  </main>
+  <footer><span>© <span id="year"></span></span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
