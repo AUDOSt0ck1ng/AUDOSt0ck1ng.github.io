@@ -205,7 +205,10 @@ footer { height:65px; padding-inline:5.2%; background:#070d11; border-top:1px so
   .contact { padding-inline:7%; }
 }
 @media(max-width:650px) {
-  .hero { height:850px; align-items:flex-start; padding:113px 6% 0; }
+  /* The bottom padding reserves exactly the height the artwork takes at this
+     width, so the hero grows with the picture instead of pinning it to a
+     fixed 385px band that cropped most of the frame away. */
+  .hero { height:auto; align-items:flex-start; padding:113px 6% calc(100% * 897 / 1672); }
   .hero-copy { width:100%; }
   .hero h1 { font-size:49px; max-width:440px; line-height:1.04; }
   .hero h1 br { display:block; }
@@ -213,9 +216,8 @@ footer { height:65px; padding-inline:5.2%; background:#070d11; border-top:1px so
   .actions { flex-direction:row; gap:9px; }
   .button { min-width:0; width:auto; gap:20px; font-size:11px; padding:12px; }
   .terminal { font-size:9px; margin-top:23px; }
-  .wonderland { inset:465px 0 0; width:100%; height:385px; }
+  .wonderland { inset:auto 0 0; width:100%; height:auto; aspect-ratio:1672/897; }
   .wonderland::after { background:linear-gradient(#080e12,transparent 12%,transparent 90%,#080e12); }
-  .hero-artwork { object-position:58% center; }
   .featured,.other-projects,.two-column { width:88%; }
   .featured { padding-block:40px 40px; row-gap:18px; }
   .project-copy>p,.project-shot { max-width:none; }
@@ -249,11 +251,11 @@ footer { height:65px; padding-inline:5.2%; background:#070d11; border-top:1px so
   .tea-art { width:86%; right:7%; }
 }
 @media(max-width:650px) {
-  .contact.tea-party { height:660px; padding:48px 6% 0; align-items:flex-start; }
+  .contact.tea-party { height:auto; padding:48px 6% calc(100% * 688 / 2171); align-items:flex-start; }
   .tea-party .contact-copy { max-width:100%; margin:0; }
   .tea-party h2 { font-size:45px; }
   .tea-party .contact-copy>p:not(.eyebrow) { font-size:13px; }
-  .tea-art { inset:305px -10% 0 auto; width:130%; height:350px; }
+  .tea-art { inset:auto 0 0; width:100%; height:auto; aspect-ratio:2171/688; }
   .tea-art::after { background:linear-gradient(#080e12,transparent 18%,transparent 84%,#080e12); }
   .tea-time { margin-top:19px; }
 }
