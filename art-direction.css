@@ -20,6 +20,11 @@ body { background:var(--bg); font-weight:400; }
 .button { border-radius:3px; min-width:166px; padding:13px 17px; font-size:12px; background:#080e1270; }
 .button-light { background:#ece8de; }
 .terminal { margin-top:29px; font-size:11px; color:#82949f; }
+/* The resume download is the one clickable thing in the terminal line, so it
+   carries a warm highlight instead of inheriting the muted grey. */
+.hero .terminal a { color:#f2c552; font-weight:500; text-decoration:underline;
+  text-decoration-color:#f2c55266; text-underline-offset:3px; transition:color .2s,text-decoration-color .2s; }
+.hero .terminal a:hover { color:#ffd970; text-decoration-color:#ffd970; }
 .wonderland { inset:auto max(5.2vw,calc((100vw - 1320px)/2)) 150px auto; width:38%; max-width:653px; height:54.7%; overflow:hidden; z-index:-1; opacity:1; }
 /* <picture> is an inline box; display:contents removes it so the img keeps sizing
    against .wonderland / .tea-art rather than an auto-height wrapper. */
