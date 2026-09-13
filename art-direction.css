@@ -153,8 +153,6 @@ body { background:var(--bg); font-weight:400; }
   font-size:11px; color:#c6d0d7; }
 .list-row:hover strong { color:#eaf1f6; }
 .list-row small,.timeline small { font-size:12px; }
-/* A personal remark, set apart from the factual line above it. */
-.list-row .aside { font-style:italic; font-size:11px; color:#78868f; }
 .timeline { grid-template-columns:66px 9px 1fr; min-height:0; padding-top:17px; padding-bottom:6px; gap:14px; }
 .timeline time { line-height:1.5; }
 .timeline.study>i::before { background:#0b1318; border:1px solid #8fa0ae; }
