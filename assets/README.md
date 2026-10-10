@@ -122,6 +122,19 @@
     </picture>
 
 `width` / `height` 只寫在 `<img>` 上，且兩個檔尺寸必須一樣。
+
+首屏那張另外多一份 `alice-and-rabbit-1000.webp`（1000px 寬，約 149KB），
+用 `srcset` + `sizes` 讓手機和 1x 螢幕拿小的、高解析螢幕拿原圖：
+
+    <source type="image/webp"
+            srcset="assets/art/alice-and-rabbit-1000.webp 1000w, assets/art/alice-and-rabbit.webp 1672w"
+            sizes="(max-width:650px) 100vw, 700px">
+
+`sizes` 的 700px 不是外框寬度：桌機上 `.wonderland` 外框比圖窄，`object-fit:cover`
+是以高度撐滿，圖實際畫出來約 690px 寬。改了 `.hero` 高度或 `.wonderland` 尺寸要
+重算這個值，不然瀏覽器會挑到太小的圖而變糊。換首屏圖時三個檔都要重產：
+
+    python -c "from PIL import Image;im=Image.open('assets/art/alice-and-rabbit.png').convert('RGB');im.resize((1000,round(1000*im.height/im.width)),Image.Resampling.LANCZOS).save('assets/art/alice-and-rabbit-1000.webp','WEBP',quality=92,method=6)"
 **換圖的時候兩個檔都要重新產，不能只換其中一個：**
 
     python -c "from PIL import Image;Image.open('assets/art/alice-and-rabbit.png').convert('RGB').save('assets/art/alice-and-rabbit.webp','WEBP',quality=92,method=6)"
