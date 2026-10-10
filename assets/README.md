@@ -44,14 +44,15 @@
 
 ## 加一張圖到現有的組
 
-1. 檔案丟進 `assets/projects/`，命名接著排（例如 `stentor04.png`）。
+1. 檔案丟進 `assets/projects/`，命名接著排（例如 `stentor04.png`），
+   並產一份同名的 `.webp`（見下方〈PNG 截圖也有 WebP 版〉）。
 2. 到 `index.html` 找到那個 `<div class="deck">`，**複製裡面那行
-   `<div class="deck-card">`，改掉 `src`、`alt`、`width`、`height`**。
+   `<div class="deck-card">`，改掉 `srcset`、`src`、`alt`、`width`、`height`**。
    順序就是疊層順序，第一行在最前面。
 
        <div class="deck" data-deck="stentor">
-         <div class="deck-card"><img src="assets/projects/stentor01.png" alt="..." width="1028" height="1295"></div>
-         <div class="deck-card"><img src="assets/projects/stentor02.png" alt="..." width="1020" height="1283"></div>
+         <div class="deck-card"><picture><source type="image/webp" srcset="assets/projects/stentor01.webp"><img src="assets/projects/stentor01.png" alt="..." width="1028" height="1295"></picture></div>
+         <div class="deck-card"><picture><source type="image/webp" srcset="assets/projects/stentor02.webp"><img src="assets/projects/stentor02.png" alt="..." width="1020" height="1283"></picture></div>
        </div>
 
    截圖本身**不是連結**：在圖上誤點一下不該把人帶離頁面。
@@ -66,7 +67,8 @@
 ## 把某一張換成別張
 
 1. 新圖丟進 `assets/art/` 或 `assets/projects/`。
-2. 改 `index.html` 裡那一行的 `src`。
+2. 改 `index.html` 裡那一行的 `src`（有 `<picture>` 的話 `srcset` 也要改，
+   並重新產 `.webp`）。
 3. **把 `width` / `height` 改成新圖的實際像素尺寸。** 這兩個屬性不是拿來
    縮放的，是給瀏覽器先算好版位、避免圖載入時整頁跳動。填錯會讓版面抖動，
    Featured 那張還會裁到錯的地方。
@@ -106,7 +108,7 @@
 
 首屏那張是 `fetchpriority="high"`，會擋住首次繪製，盡量壓在 500KB 以內。
 其他的都有 `loading="lazy"`，寬鬆一點沒關係，但單張還是建議 1MB 以下。
-截圖用 PNG，照片或插畫用 JPEG 或 WebP。
+截圖用 PNG 加一份 WebP，照片或插畫用 JPEG 或 WebP。
 
 
 ## 兩張插畫是 WebP + PNG 雙檔
@@ -125,5 +127,16 @@
     python -c "from PIL import Image;Image.open('assets/art/alice-and-rabbit.png').convert('RGB').save('assets/art/alice-and-rabbit.webp','WEBP',quality=92,method=6)"
 
 `<picture>` 本身是 inline 盒子，會破掉 `.wonderland` / `.tea-art` 的百分比高度，
-所以 `art-direction.css` 裡有一行 `.wonderland picture,.tea-art picture { display:contents }`
+所以 `art-direction.css` 裡有一行 `.wonderland picture,.tea-art picture,.deck-card picture { display:contents }`
 把它從版面上拿掉。再加新的 `<picture>` 記得跟著加進這個選擇器。
+
+
+## PNG 截圖也有 WebP 版
+
+`projects/` 裡的 PNG 截圖各有一份同名 `.webp`，寫法跟插畫一樣用 `<picture>` 包。
+PNG 合計約 1.5MB，WebP（quality 90，文字仍清楚）約 0.5MB。
+`persona01.jpg` 本來就只有 62KB，轉了也省不多，所以維持單檔。
+
+換圖或加圖時重新產 WebP：
+
+    python -c "from PIL import Image;Image.open('assets/projects/stentor01.png').save('assets/projects/stentor01.webp','WEBP',quality=90,method=6)"
