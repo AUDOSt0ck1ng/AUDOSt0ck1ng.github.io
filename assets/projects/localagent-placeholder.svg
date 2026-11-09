@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <rect width="1600" height="900" fill="#0c151b"/>
-  <rect x="24" y="24" width="1552" height="852" rx="10" fill="none" stroke="#2c3a43" stroke-width="2" stroke-dasharray="14 10"/>
-  <g font-family="DM Mono, monospace" text-anchor="middle">
-    <text x="800" y="430" font-size="64" fill="#c4ccd1" letter-spacing="6">LOCAL AGENT PLATFORM</text>
-    <text x="800" y="500" font-size="30" fill="#7f8e98" letter-spacing="4">screenshots coming soon</text>
-  </g>
-</svg>
